@@ -10,7 +10,7 @@ export class SelectBoxComponent extends React.PureComponent {
         }
         return (React.createElement(TouchableOpacity, { activeOpacity: 0.7, onPress: () => openModal(), style: [SelectBoxStyle.pressBtn, selectViewIsDisabled && SelectBoxStyle.disabledBtn] },
             React.createElement(View, { style: SelectBoxStyle.container },
-                React.createElement(Text, { style: [selectViewIsDisabled ? SelectBoxStyle.disabledTxt : SelectBoxStyle.chooseText] }, (selectedObject && selectedObject.Name) ? selectedObject.Name : chooseText),
+                React.createElement(Text, { style: [selectViewIsDisabled ? SelectBoxStyle.disabledTxt : SelectBoxStyle.chooseText] }, (selectedObject && selectedObject.airport_name) ? selectedObject.airport_name : chooseText),
                 React.createElement(Image, { source: require('../Assets/Images/down.png'), style: [SelectBoxStyle.downBtn, selectViewIsDisabled && SelectBoxStyle.disabledImage] }))));
     }
 }
