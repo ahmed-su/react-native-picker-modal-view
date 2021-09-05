@@ -1,8 +1,8 @@
 export const generateAlphabet = (items, sortingLanguage) => {
     const singularAlpha = [];
     items.map((x) => {
-        if (singularAlpha.indexOf(x.Name.charAt(0)) === -1) {
-            singularAlpha.push(x.Name.charAt(0));
+        if (singularAlpha.indexOf(x.airport_name.charAt(0)) === -1) {
+            singularAlpha.push(x.airport_name.charAt(0));
         }
     });
     if (sortingLanguage === 'tr') {
@@ -29,14 +29,14 @@ export const trCompare = (a, b) => {
 export const getIndex = (alphabet, items, autoSort, searchText) => {
     const list = getFilteredData(items, autoSort, searchText);
     const findIndex = list.findIndex((x) => {
-        return x.Name.charAt(0) === alphabet;
+        return x.airport_name.charAt(0) === alphabet;
     });
     return findIndex;
 };
 export const getFilteredData = (items, autoSort, searchText) => {
     if (autoSort) {
-        items.sort((a, b) => trCompare(a.Name, b.Name));
+        items.sort((a, b) => trCompare(a.airport_name, b.airport_name));
     }
-    return items.filter((l) => l.Name.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) > -1);
+    return items.filter((l) => l.airport_name.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) > -1);
 };
 //# sourceMappingURL=index.js.map
