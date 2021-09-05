@@ -137,8 +137,8 @@ export default class Main extends React.Component<{}, { selectedItem: {} }> {
 | **showAlphabeticalIndex**         | `boolean`  | Hides alphabetical index                               | `"true"`                                    |
 | **onClosed**                      | `Function` | Fired when the modal is closed                         |                                             |
 | **onBackButtonPressed**           | `Function` | Fired when the back key is pressed                     |                                             |
-| **onSelected** <br> **required*   | `Function` | Returns selected item object                           | `"{Id, Name, Value, [key: string]: any}"`   |
-| **items** <br> **required*        | `array`    | Array of list items                                    | `"[{Id, Name, Value, [key: string]: any}]"` |
+| **onSelected** <br> **required*   | `Function` | Returns selected item object                           | `"{Id, airport_name, Value, [key: string]: any}"`   |
+| **items** <br> **required*        | `array`    | Array of list items                                    | `"[{Id, airport_name, Value, [key: string]: any}]"` |
 | **renderSelectView**              | `Element`  | Render Select Component                                | `<SelectBoxComponent (built-in)>`           |
 | **renderListItem**                | `Element`  | Render List item                                       | `<ListItemComponent (built-in)/>`           |
 | **alphabeticalIndexChars**        | `array`    | Chracters array for the alphabetical index             | `<Turkish alphabet chracters>`              |
