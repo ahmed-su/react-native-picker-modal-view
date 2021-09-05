@@ -3,8 +3,8 @@ import { IModalListInDto } from '@Interfaces';
 export const generateAlphabet = (items: IModalListInDto[], sortingLanguage?: string): Array<string> => {
 	const singularAlpha = [];
 	items.map((x: IModalListInDto) => {
-		if (singularAlpha.indexOf(x.Name.charAt(0)) === -1) {
-			singularAlpha.push(x.Name.charAt(0));
+		if (singularAlpha.indexOf(x.airport_name.charAt(0)) === -1) {
+			singularAlpha.push(x.airport_name.charAt(0));
 		}
 	});
 
@@ -37,7 +37,7 @@ export const getIndex = (alphabet: string, items: IModalListInDto[], autoSort: b
 
 
 	const findIndex = list.findIndex((x: IModalListInDto) => {
-		return x.Name.charAt(0) === alphabet;
+		return x.airport_name.charAt(0) === alphabet;
 	});
 
 	return findIndex;
@@ -45,7 +45,7 @@ export const getIndex = (alphabet: string, items: IModalListInDto[], autoSort: b
 
 export const getFilteredData = (items: IModalListInDto[], autoSort: boolean, searchText: string): IModalListInDto[] => {
 	if (autoSort) {
-		items.sort((a, b) => trCompare(a.Name, b.Name));
+		items.sort((a, b) => trCompare(a.airport_name, b.airport_name));
 	}
-	return items.filter((l: IModalListInDto) => l.Name.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) > -1);
+	return items.filter((l: IModalListInDto) => l.airport_name.toLocaleLowerCase().indexOf(searchText.toLocaleLowerCase()) > -1);
 }
