@@ -8,7 +8,7 @@ import { ListItemStyle } from '@Styles';
 
 export class ListItemComponent extends React.PureComponent<IListItemInDto, {}> {
 	public render(): JSX.Element {
-		const { onSelectMethod, defaultSelected, list: { Name } } = this.props;
+		const { onSelectMethod, defaultSelected, list: { airport_name } } = this.props;
 		return (
 			<TouchableOpacity
 				style={ListItemStyle.container}
@@ -16,7 +16,7 @@ export class ListItemComponent extends React.PureComponent<IListItemInDto, {}> {
 				onPress={() => onSelectMethod(this.props.list)}
 			>
 				<View style={ListItemStyle.btnContainer}>
-					<Text style={[(defaultSelected && Name === defaultSelected.Name) && ListItemStyle.selected]}>{Name}</Text>
+					<Text style={[(defaultSelected && airport_name === defaultSelected.airport_name) && ListItemStyle.selected]}>{airport_name}</Text>
 				</View >
 			</TouchableOpacity>
 		);
