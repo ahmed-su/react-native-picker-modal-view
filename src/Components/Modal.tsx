@@ -83,7 +83,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 					items={items}
 					disabled={disabled}
 					selectedObject={selectedObject}
-					chooseText={(selected && selected.Name) ? selected.Name : selectPlaceholderText}
+					chooseText={(selected && selected.airport_name) ? selected.airport_name : selectPlaceholderText}
 					openModal={this.openModal.bind(this)}
 				/>
 				<Modal
@@ -154,7 +154,7 @@ export class ModalComponent extends React.PureComponent<IModalProps, IModalState
 
 	private _onViewableItemsChanged({ viewableItems }): void {
 		if (viewableItems && viewableItems[0]) {
-			const firstLetter = viewableItems[0].item.Name.charAt(0);
+			const firstLetter = viewableItems[0].item.airport_name.charAt(0);
 			this.setState({
 				selectedAlpha: firstLetter,
 			});
