@@ -21,7 +21,7 @@ export class SelectBoxComponent extends React.PureComponent<ISelectBoxProps, {}>
 			>
 				<View style={SelectBoxStyle.container}>
 					<Text style={[selectViewIsDisabled ? SelectBoxStyle.disabledTxt : SelectBoxStyle.chooseText]}>{
-						(selectedObject && selectedObject.Name) ? selectedObject.Name : chooseText
+						(selectedObject && selectedObject.airport_name) ? selectedObject.airport_name : chooseText
 					}</Text>
 					<Image source={require('../Assets/Images/down.png')}
 						style={[SelectBoxStyle.downBtn, selectViewIsDisabled && SelectBoxStyle.disabledImage]}
